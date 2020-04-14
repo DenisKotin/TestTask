@@ -89,7 +89,7 @@ class ShipSpec implements Specification<Ship> {
             } else if (criteria.getOperation().equals(SearchOperation.GREATER_DATA)) {
                 result.add(builder.greaterThanOrEqualTo(
                         builder.function("year", Integer.class, root.get(criteria.getNameField())),
-                        getYear(criteria.getValue())));
+                        getYear(criteria.getValue())+1));
             } else if (criteria.getOperation().equals(SearchOperation.LESS_DATA)) {
                 result.add(builder.lessThanOrEqualTo(
                         builder.function("year", Integer.class, root.get(criteria.getNameField())),
